@@ -1,0 +1,5 @@
+pandas
+numpy
+requests
+os
+PyGithub==1.58.0
