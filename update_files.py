@@ -43,7 +43,10 @@ for i in range(1, len(df)):
     body.append(a)
 
 df = pd.DataFrame.from_records(body, columns= cols)
-df = pd.concat([empresi, df])
+if len(df) > 0:
+    df = pd.concat([empresi, df])
+else:
+    df = empresi.copy()
 mycsv = df.to_csv()
 
 #%%
