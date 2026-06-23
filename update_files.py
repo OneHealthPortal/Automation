@@ -48,6 +48,7 @@ if len(df) > 0:
 else:
     df = empresi.copy()
 df = df[~pd.isnull(df['id_event'])]
+df = df.drop_duplicates(subset='id_event')
 mycsv = df.to_csv(index=False)
 
 #%%
