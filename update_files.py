@@ -47,7 +47,8 @@ if len(df) > 0:
     df = pd.concat([empresi, df])
 else:
     df = empresi.copy()
-mycsv = df.to_csv()
+df = df[~pd.isnull(df['id_event'])]
+mycsv = df.to_csv(index=False)
 
 #%%
 # Convert to .js
