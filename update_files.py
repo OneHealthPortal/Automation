@@ -53,7 +53,7 @@ mycsv = df.to_csv(index=False)
 
 #%%
 # Convert to .js
-myjs = df.to_json(orient='records')
+myjs = df.to_json()
 myjs = "const empresi = " + myjs + ";"
     
 #%%
