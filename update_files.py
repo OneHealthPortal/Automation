@@ -6,7 +6,7 @@ import os
 from github import Github
 
 #%%
-empresi = pd.read_csv('https://onehealthportal.github.io/CSV/empresi_1.csv')
+empresi = pd.read_csv('https://onehealthportal.github.io/CSV/Avian_Influenza/empresi_1.csv')
 start_date = str(max(pd.to_datetime(empresi['observation_date'])))[:10]
 end_date = datetime.datetime.now().strftime('%Y-%m-%d')[:10]
 
@@ -62,8 +62,8 @@ my_token = os.environ["PAGES_TOKEN"]
 g = Github(my_token)
 repo = g.get_user().get_repo("OneHealthPortal.github.io")
 
-empresi_1js = repo.get_contents("/JS/empresi_1.js")
-empresi_1csv = repo.get_contents("/CSV/empresi_1.csv")
+empresi_1js = repo.get_contents("/JS/Avian_Influenza/empresi_1.js")
+empresi_1csv = repo.get_contents("/CSV/Avian_Influenza/empresi_1.csv")
 
 repo.update_file (empresi_1js.path, 'Last Updated: '+ datetime.date.today().strftime("%d/%m/%Y"), myjs, empresi_1js.sha)
 repo.update_file (empresi_1csv.path, 'Last Updated: '+ datetime.date.today().strftime("%d/%m/%Y"), mycsv, empresi_1csv.sha)
