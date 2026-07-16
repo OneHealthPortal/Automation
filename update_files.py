@@ -127,7 +127,7 @@ mycsv = df.to_csv(index=False)
 
 #Convert to .js
 myjs = df.to_json()
-myjs = "const empresi = " + myjs + ";"
+myjs = "const wahis = " + myjs + ";"
     
 #Update GitHub
 woah_1js = repo.get_contents("/JS/Avian_Influenza/woah_1.js")
